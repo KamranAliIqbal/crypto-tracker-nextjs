@@ -1,6 +1,7 @@
 import Crypto from "./components/Crypto";
 import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
+import { matchSorter } from "match-sorter";
 
 export default function Home() {
   const [cryptoData, setCryptoData] = useState([]);
@@ -23,9 +24,9 @@ export default function Home() {
     setSearch(e.target.value);
   };
 
-  const filteredCoins = cryptoData.filter((coin) =>
-    coin.name.toLowerCase().includes(search.toLowerCase())
-  );
+  const filteredCoins = matchSorter(cryptoData, search, {
+    keys: ["name", "market_cap", "current_price"],
+  }).sort((a, b) => b.market_cap - a.market_cap);
 
   return (
     <div>
