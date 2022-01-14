@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Header from "../components/Header";
+import Head from "next/head";
 import TrendingData from "./TrendingData";
 
 function trendingCoins() {
@@ -22,13 +22,18 @@ function trendingCoins() {
   }
 
   return (
-    <div>
-      <ul>
-        {trendingCoins.map(({ item: { name, symbol } }, key) => (
-          <TrendingData name={name} key={key} symbol={symbol} />
-        ))}
-      </ul>
-    </div>
+    <>
+      <Head>
+        <title>Crypto | Trending</title>
+      </Head>
+      <div>
+        <ul>
+          {trendingCoins.map(({ item: { name, symbol } }, key) => (
+            <TrendingData name={name} key={key} symbol={symbol} />
+          ))}
+        </ul>
+      </div>
+    </>
   );
 }
 

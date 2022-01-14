@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Header from "../components/Header";
+import Head from "next/head";
 import ExchangesData from "./ExchangesData";
 
 function exchanges() {
@@ -22,21 +22,31 @@ function exchanges() {
   }
 
   return (
-    <div>
-      <ul>
-        {exchange.map(
-          ({
-            name,
-            year_established: year,
-            image,
-            trust_score: score,
-            trust_score_rank: rank,
-          }) => (
-            <ExchangesData name={name} year={year} rank={rank} image={image} />
-          )
-        )}
-      </ul>
-    </div>
+    <>
+      <Head>
+        <title>Crypto | Exchanges</title>
+      </Head>
+      <div>
+        <ul>
+          {exchange.map(
+            ({
+              name,
+              year_established: year,
+              image,
+              trust_score: score,
+              trust_score_rank: rank,
+            }) => (
+              <ExchangesData
+                name={name}
+                year={year}
+                rank={rank}
+                image={image}
+              />
+            )
+          )}
+        </ul>
+      </div>
+    </>
   );
 }
 

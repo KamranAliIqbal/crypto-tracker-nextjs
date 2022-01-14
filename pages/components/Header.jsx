@@ -36,6 +36,9 @@ function Header() {
         <Link href="/exchanges">
           <a className={color}>Exchanges</a>
         </Link>
+        <Link href="/categories">
+          <a className={color}>Categories</a>
+        </Link>
       </div>
 
       <img

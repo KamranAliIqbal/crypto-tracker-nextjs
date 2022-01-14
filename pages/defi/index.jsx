@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import Header from "../components/Header";
-
+import Head from "next/head";
 function defi() {
   const [defi, setDefi] = useState();
 
@@ -23,10 +22,15 @@ function defi() {
   console.log(defi.data);
 
   return (
-    <div>
-      <h1 className="text-xl">{defi.data.top_coin_name}</h1>
-      <p>Market cap: {defi.data.eth_market_cap}</p>
-    </div>
+    <>
+      <Head>
+        <title>Crypto | Defi</title>
+      </Head>
+      <div>
+        <h1 className="text-xl">{defi.data.top_coin_name}</h1>
+        <p>Market cap: {defi.data.eth_market_cap}</p>
+      </div>
+    </>
   );
 }
 

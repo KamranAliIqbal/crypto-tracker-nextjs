@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Header from "../components/Header";
+import Head from "next/head";
 import NetworksData from "./networksData";
 
 function networks() {
@@ -23,6 +23,9 @@ function networks() {
 
   return (
     <div>
+      <Head>
+        <title>Crypto | Blockchain Networks</title>
+      </Head>
       <NetworksData />
       <ul>
         {networks.map(({ name }) => (

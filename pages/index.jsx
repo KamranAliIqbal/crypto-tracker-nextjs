@@ -1,7 +1,7 @@
 import Crypto from "./components/Crypto";
 import React, { useState, useEffect } from "react";
-import Header from "./components/Header";
 import { matchSorter } from "match-sorter";
+import Head from "next/head";
 
 export default function Home() {
   const [cryptoData, setCryptoData] = useState([]);
@@ -31,6 +31,9 @@ export default function Home() {
 
   return (
     <div>
+      <Head>
+        <title>Crypto | Home</title>
+      </Head>
       <div className="flex justify-center text-blue-900 ">
         <input
           className="w-3/12 rounded-lg"
