@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Poppins:wght@100&display=swap");
+
+@layer base {
+  body {
+    @apply bg-[#06202A] text-gray-300;
+  }
+}
