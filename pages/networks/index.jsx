@@ -23,7 +23,6 @@ function networks() {
 
   return (
     <div>
-      <Header />
       <NetworksData />
       <ul>
         {networks.map(({ name }) => (

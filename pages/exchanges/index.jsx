@@ -23,7 +23,6 @@ function exchanges() {
 
   return (
     <div>
-      <Header />
       <ul>
         {exchange.map(
           ({

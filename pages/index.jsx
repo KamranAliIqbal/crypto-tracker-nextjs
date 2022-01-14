@@ -5,6 +5,7 @@ import { matchSorter } from "match-sorter";
 
 export default function Home() {
   const [cryptoData, setCryptoData] = useState([]);
+
   const [search, setSearch] = useState("");
 
   const getApi = () => {
@@ -30,9 +31,7 @@ export default function Home() {
 
   return (
     <div>
-      <Header />
       <div className="flex justify-center text-blue-900 ">
-        {/* // store inpiut value in react state */}
         <input
           className="w-3/12 rounded-lg"
           type="text"
@@ -43,12 +42,6 @@ export default function Home() {
       </div>
       <div>
         <ul>
-          {/* // filter over cryptodata array before mapping 
-          // name => name === searchinputvalue
-          // features:
-          // toLowerCase (irre)
-          // search this even when whole name is not searched for */}
-
           {filteredCoins.map(
             (
               { name, symbol, image, current_price: price, market_cap: mktcap },

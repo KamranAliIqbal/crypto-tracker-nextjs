@@ -24,7 +24,6 @@ function defi() {
 
   return (
     <div>
-      <Header />
       <h1 className="text-xl">{defi.data.top_coin_name}</h1>
       <p>Market cap: {defi.data.eth_market_cap}</p>
     </div>

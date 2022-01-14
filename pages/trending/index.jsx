@@ -23,7 +23,6 @@ function trendingCoins() {
 
   return (
     <div>
-      <Header />
       <ul>
         {trendingCoins.map(({ item: { name, symbol } }, key) => (
           <TrendingData name={name} key={key} symbol={symbol} />
