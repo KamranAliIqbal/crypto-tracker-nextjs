@@ -5,10 +5,11 @@ import Head from "next/head";
 import useSWR from "swr";
 import { ApiCoinType } from "../types/ApiCoinType";
 import Link from "next/link";
+import { COINGECKO_BASEURL } from "../consts";
 
 async function getApiCoins() {
   const response = await fetch(
-    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=nok"
+    `${COINGECKO_BASEURL}/coins/markets?vs_currency=nok`
   );
   return await response.json();
 }

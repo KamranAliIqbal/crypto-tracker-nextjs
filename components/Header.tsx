@@ -43,7 +43,7 @@ function Header() {
         <Link href="/login">
           <a className={color}>Login</a>
         </Link>
-        <Link href="#">
+        <Link href="/signup">
           <a className="text-yellow-700 bg-yellow-400 px-4 py-2 hover:text-yellow-800 hover:bg-yellow-300 rounded transition ease-in duration-150">
             Signup
           </a>
