@@ -1,5 +1,16 @@
 import { useEffect, useState } from "react";
 import Head from "next/head";
+import DefiArticles from "./DefiArticles";
+import useSWR from "swr";
+
+const person = [
+  {
+    name: "nikolai",
+    age: 21,
+    corona: true,
+  },
+];
+
 function defi() {
   const [defi, setDefi] = useState();
 
@@ -11,23 +22,25 @@ function defi() {
       });
   };
 
-  useEffect(() => {
-    const data = getDefiData();
-  }, []);
+  // useEffect(() => {
+  //   const data = getDefiData();
+  // }, []);
 
-  if (!defi) {
-    return <h1>loading...</h1>;
-  }
+  const { data, error } = useSWR("defi", getDefiData);
 
-  console.log(defi.data);
+  if (error) return <div>Failed to load...</div>;
+  if (!data) return <div>Loading...</div>;
+  return <div>{data}</div>;
 
   return (
     <>
       <Head>
         <title>Crypto | Defi</title>
       </Head>
-      <div>
-        <h1 className="text-xl">{defi.data.top_coin_name}</h1>
+
+      <DefiArticles />
+      <div className="p-4">
+        <h1 className="">{defi.data.top_coin_name}</h1>
         <p>Market cap: {defi.data.eth_market_cap}</p>
       </div>
     </>

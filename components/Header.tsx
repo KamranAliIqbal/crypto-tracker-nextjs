@@ -15,12 +15,11 @@ function Header() {
     { value: "currency", label: "NOK" },
   ];
 
-  const color =
-    "transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 ...";
+  const color = "text-indigo-800 hover:text-indigo-600 inline-block p-4";
 
   return (
-    <div className="flex flex-col sm:flex-row m-5 justify-between item-center h-auto border-b-2 border-b-neutral-900">
-      <div className="flex flex-grow justify-evenly max-w-2xl ">
+    <div className="flex justify-between p-3 border overflow-hidden">
+      <div className="flex items-center ">
         <Link href="/">
           <a className={color}>Home</a>
         </Link>
@@ -40,13 +39,17 @@ function Header() {
           <a className={color}>Categories</a>
         </Link>
       </div>
-
-      <img
-        className="object-contain"
-        src="/coin.png"
-        width={200}
-        height={100}
-      />
+      <div className="flex px-4 items-center">
+        <Link href="/login">
+          <a className={color}>Login</a>
+        </Link>
+        <Link href="#">
+          <a className="text-yellow-700 bg-yellow-400 px-4 py-2 hover:text-yellow-800 hover:bg-yellow-300 rounded transition ease-in duration-150">
+            Signup
+          </a>
+        </Link>
+        <img className="ml-6" src="/coin.png" width={200} height={100} />
+      </div>
     </div>
   );
 }

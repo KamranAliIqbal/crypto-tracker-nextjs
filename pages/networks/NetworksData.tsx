@@ -1,8 +1,7 @@
 function NetworksData({ name }) {
   return (
-    <div className="">
-      <h1>{name}</h1>
-      <h1>Test</h1>
+    <div className=" ">
+      <h1 className="text-xl font-mono text-white-900">{name}</h1>
     </div>
   );
 }
